@@ -12,9 +12,9 @@ function Home() {
       <Menu />
 
       <BannerMain
-        videoTitle={dadosIniciais.categorias[4].videos[2].titulo}
-        url={dadosIniciais.categorias[4].videos[2].url}
-        videoDescription={dadosIniciais.categorias[4].videos[2].videoDescription} />
+        videoTitle={dadosIniciais.categorias[4].videos[1].titulo}
+        url={dadosIniciais.categorias[4].videos[1].url}
+        videoDescription={dadosIniciais.categorias[4].videos[1].videoDescription} />
 
       <Carousel category={dadosIniciais.categorias[0]}/>
       <Carousel category={dadosIniciais.categorias[1]} />
