@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
     const valoresIniciais = {
@@ -29,36 +30,28 @@ function CadastroCategoria() {
                 ]);
                 setValores(valoresIniciais);
             }}>
-                <div>
-                    <label>
-                        Nome da Categoria:
-                        <input type="text"
-                            name="nome"
-                            value={valores.nome}
-                            onChange={handleChange} />
-                    </label>
-                </div>
 
-                <div>
-                    <label>
-                        Descrição:
-                        <textarea type="text"
-                            name="descricao"
-                            value={valores.descricao}
-                            onChange={handleChange}>
-                        </textarea>
-                    </label>
-                </div>
+                <FormField
+                    label={"Nome da Categoria"}
+                    type={"text"}
+                    name={"nome"}
+                    value={valores.nome}
+                    onChange={handleChange} />
 
-                <div>
-                    <label>
-                        Cor:
-                        <input type="color"
-                            name="cor"
-                            value={valores.cor}
-                            onChange={handleChange} />
-                    </label>
-                </div>
+                <FormField
+                    label={"Descrição"}
+                    type={"text"}
+                    name={"descricao"}
+                    value={valores.descricao}
+                    onChange={handleChange} />
+                
+                <FormField
+                    label={"Cor"}
+                    type={"color"}
+                    name={"cor"}
+                    value={valores.cor}
+                    onChange={handleChange} />
+
                 <button>Cadastrar</button>
             </form>
 
