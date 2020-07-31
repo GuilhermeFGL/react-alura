@@ -7,7 +7,7 @@ const Main = styled.main`
     background-color: var(--black);
     color: var(--white);
     flex: 1;
-    padding-top: 150px;
+    padding-top: 100px;
     padding-right: 5%;
     padding-left: 5%;
 `;
