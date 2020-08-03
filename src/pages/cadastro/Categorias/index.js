@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../../components/Button';
 import FormField from '../../../components/FormField';
 import PageDefault from '../../../components/PageDefault';
+import useForm from '../../../hooks';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -9,15 +10,8 @@ function CadastroCategoria() {
     descricao: '',
     cor: '',
   };
+  const { valores, handleChange, clearForm } = useForm(valoresIniciais);
   const [categorias, setCategorias] = useState([]);
-  const [valores, setValores] = useState(valoresIniciais);
-
-  function handleChange(evento) {
-    setValores({
-      ...valores,
-      [evento.target.getAttribute('name')]: evento.target.value,
-    });
-  }
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
@@ -49,7 +43,7 @@ function CadastroCategoria() {
           ...categorias,
           valores,
         ]);
-        setValores(valoresIniciais);
+        clearForm();
       }}
       >
 
@@ -85,8 +79,8 @@ function CadastroCategoria() {
       )}
 
       <ul>
-        {categorias.map((categoria, index) => (
-          <li key={`id_${index}`}>{categoria.nome}</li>
+        {categorias.map((categoria) => (
+          <li key={`id_${categoria.id}`}>{categoria.titulo}</li>
         ))}
       </ul>
 
