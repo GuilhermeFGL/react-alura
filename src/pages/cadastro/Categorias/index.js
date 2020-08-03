@@ -3,6 +3,7 @@ import Button from '../../../components/Button';
 import FormField from '../../../components/FormField';
 import PageDefault from '../../../components/PageDefault';
 import useForm from '../../../hooks';
+import config from '../../../config';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -15,8 +16,7 @@ function CadastroCategoria() {
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:8080/categorias';
-      fetch(URL)
+      fetch(config.URL_BACKEND)
         .then(async (respostaDoServer) => {
           if (respostaDoServer.ok) {
             const resposta = await respostaDoServer.json();
